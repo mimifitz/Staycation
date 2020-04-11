@@ -19,10 +19,10 @@ con.connect(function (err) {
     console.log("Connected!");
 
     //edit this to create database tables
-    let sql = '';
+    let sql =
 
-    // Here we are making sure to wipe out any tables that already exist!
-    'SET FOREIGN_KEY_CHECKS = 0; ' +
+        // Here we are making sure to wipe out any tables that already exist!
+        'SET FOREIGN_KEY_CHECKS = 0; ' +
 
         'DROP TABLE if exists locations; DROP TABLE if exists users; DROP TABLE if exists listings; DROP TABLE if exists bookings; DROP TABLE if exists reviews; ' +
         // Here we actually create the tables
