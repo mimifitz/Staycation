@@ -50,6 +50,12 @@ con.connect(function (err) {
 
         console.log("Closing...");
     });
-
+    //DUMMY DATA <failed> need to correct errors
+    sql =
+        "INSERT INTO listings (user_id integer, date_published date, space_type varchar(255), is_shared boolean, location_id integer, reviews_id integer) VALUES ('33', '2020-05-12', 'apartment tjlksjhgfgah jsygts ahfsey huiugqvty garsgqjjfs j8avw love', yes, '08932', 12);";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Creation of 'test' was successful!");
+    });
     con.end();
 });
