@@ -20,12 +20,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", function (req, res, next) {
     res.send("Welcome to staycation!");
 });
-//app.use("/", indexRouter);
-//app.use("/users", usersRouter);
+// app.use("/", indexRouter);
+// app.use("/users", usersRouter);
 
 // //ADDED
-app.use("/staycation", usersRouter);
-//app.use("/staycation", listingsRouter);
+app.use('/staycation', usersRouter);
+app.use('/staycation', listingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

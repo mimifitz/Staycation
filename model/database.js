@@ -27,7 +27,8 @@ con.connect(function (err) {
         'DROP TABLE if exists locations; DROP TABLE if exists users; DROP TABLE if exists listings; DROP TABLE if exists bookings; DROP TABLE if exists reviews; ' +
         // Here we actually create the tables
 
-        "CREATE TABLE users ( id integer PRIMARY KEY, email varchar(255) UNIQUE NOT NULL, phone_number integer UNIQUE, num_country_code integer, name varchar(255), preferred_contact_method varchar(255) ); " +
+        "CREATE TABLE users ( id INT NOT NULL AUTO_INCREMENT, email varchar(255) UNIQUE NOT NULL, phone_number integer UNIQUE, num_country_code integer, name varchar(255), preferred_contact_method varchar(255), PRIMARY KEY (`id`)); " +  //CORRECT SYNTAX
+        //"CREATE TABLE users ( id integer PRIMARY KEY, email varchar(255) UNIQUE NOT NULL, phone_number integer UNIQUE, num_country_code integer, name varchar(255), preferred_contact_method varchar(255) ); " +
         "CREATE TABLE listings ( id integer PRIMARY KEY, user_id integer, date_published date, space_type varchar(255), is_shared boolean, location_id integer, reviews_id integer ); " +
         "CREATE TABLE locations ( id integer PRIMARY KEY, street_name varchar(255), city_name varchar(255), latitude float, longitude float ); " +
         "CREATE TABLE bookings ( id integer PRIMARY KEY, user_id integer, listing_id integer, start_date date, end_date date ); " +
