@@ -4,6 +4,13 @@
 
 staycation is a global exchange platform where users can swap their home for as little, or as long, as they want.
 
+# App objectives
+
+- Rebuild a database to suit my understanding,correcting errors & creating queries with dummy data(for testing purpose).
+- Build an API server.
+- Create back end first,TEST all API routes in postman
+- Adding map,calender and review video
+
 ## Getting started
 
 ### Dependencies
@@ -16,8 +23,11 @@ cd `client` and run yarn install dependencies related to React.
 
 Create `.env` file in project directory and add
 
-```DB_NAME=staycation
-DB_PASS=YOUR_PASSWORD
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=YOUR-PASSWORD
+DB_NAME=staycation
 ```
 
 Type `mysql -u root -p` to access the MySQL CLI using your password.
@@ -51,14 +61,14 @@ Run `node model/database.js` in your TERMINAL, in the root folder of your projec
 
 | URL                          | HTTP Method | Description            | Request Object                                               | Response Object                                                                                    |
 | ---------------------------- | ----------- | ---------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| /api/v1/listings             | GET         | Get listings           | n/a                                                          | {listings: [date_published: date,space_type: string,is_shared: boolean,location_id: integer]}      |
+| /listings             | GET         | Get listings           | n/a                                                          | {listings: [date_published: date,space_type: string,is_shared: boolean,location_id: integer]}      |
 | /api/v1/listings/:id         | GET         | Get listing by id      | { listing_id:integer }                                       | {user_id: integer,date_published: date,space_type: string,is_shared: boolean,location_id: integer} |
-| /api/v1/listings             | POST        | Add listing            | {space_type: string,is_shared: boolean,location_id: integer} | {listing_id: integer,space_type: string,is_shared: boolean,location_id: integer,user_id: integer}  |
-| /api/v1/listings:id          | PUT         | Edit listing           | {listing_id: integer,user_id: integer }                      | {space_type: string,is_shared: boolean,location_id: integer}                                       |
-| /api/v1/listings:id          | DELETE      | Delete listing         | n/a                                                          | {}                                                                                                 |
-| /api/v1/users/:id/bookings   | GET         | Get bookings by user   | {user_id: integer,}                                          | {booking_id: integer}                                                                              |
-| /api/v1/users/bookings/:id/  | POST        | Add review             | {rating: integer,review_body: string,booking_id: integer}    | {rating: integer,review_body: string,user_id: integer}                                             |
-| /api/v1/listings/:id/reviews | GET         | Get reviews by listing | {listing_id: integer}                                        | {rating: integer,review_body: string}                                                              |
+| /listings             | POST        | Add listing            | {space_type: string,is_shared: boolean,location_id: integer} | {listing_id: integer,space_type: string,is_shared: boolean,location_id: integer,user_id: integer}  |
+| /listings:id          | PUT         | Edit listing           | {listing_id: integer,user_id: integer }                      | {space_type: string,is_shared: boolean,location_id: integer}                                       |
+| /listings:id          | DELETE      | Delete listing         | n/a                                                          | {}                                                                                                 |
+| /users/:id/bookings   | GET         | Get bookings by user   | {user_id: integer,}                                          | {booking_id: integer}                                                                              |
+| /users/bookings/:id/  | POST        | Add review             | {rating: integer,review_body: string,booking_id: integer}    | {rating: integer,review_body: string,user_id: integer}                                             |
+| /listings/:id/reviews | GET         | Get reviews by listing | {listing_id: integer}                                        | {rating: integer,review_body: string}                                                              |
 
 &nbsp;
 
@@ -76,6 +86,9 @@ Recreated from and inspired by, Al Madireddy's article:
 
 ### Future features
 
+- Videos of reviews from user's experience
+- Adding calender
+- Weather (to determine the weather focast at location before booking)
 - Integration with Google Maps API, SendGrid and [Numbeo](https://www.numbeo.com/common/api.jsp).
 
 _This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._

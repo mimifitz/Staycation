@@ -7,6 +7,9 @@ var logger = require("morgan");
 //var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var listingsRouter = require("./routes/listings");
+var bookingsRouter = require("./routes/bookings");
+var reviewsRouter = require("./routes/reviews");
+var locationsRouter = require("./routes/locations");
 // router.use(bodyParser.json());
 
 var app = express();
@@ -26,6 +29,10 @@ app.get("/", function (req, res, next) {
 // //ADDED
 app.use('/staycation', usersRouter);
 app.use('/staycation', listingsRouter);
+app.use('/staycation', bookingsRouter);
+app.use('/staycation', reviewsRouter);
+app.use('/staycation', locationsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

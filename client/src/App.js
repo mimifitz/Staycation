@@ -6,12 +6,12 @@ class App extends React.Component {
     super(props)
     this.state = {
       users: [],
-      //listings: []
+      listings: []
     };
   }
 
 
-  // componentDidMount() {
+  //componentDidMount() {
   //   this.fetchData();
   // }
 

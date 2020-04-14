@@ -30,7 +30,7 @@ router.get('/listings/:id', (req, res) => {
 
 router.post('/listings', (req, res) => {
     db(`INSERT INTO listings (user_id, date_published, space_type, is_shared, location_id, reviews_id) VALUES
-   ('${req.body.user_id}', '${req.body.date_published}', '${req.body.space_type}', '${req.body.is_shared}', '${req.body.location_id}', ${req.body.reviews_id});`)
+   ('${req.body.user_id}', '${req.body.date_published}', '${req.body.space_type}', '${req.body.is_shared}', '${req.body.location_id}', '${req.body.reviews_id}');`)
         .then((results) => {
             if (results.error)
             {
@@ -51,8 +51,7 @@ router.post('/listings', (req, res) => {
 router.put(`/listings/:id`, (req, res) => {
     // The request's body is available in req.body
     // URL params are available in req.params
-    db(`UPDATE INTO listings (user_id, date_published, space_type, is_shared, location_id, reviews_id) VALUES
-//   ('${req.body.user_id}', '${req.body.date_published}', '${req.body.space_type}', '${req.body.is_shared}', '${req.body.location_id}', ${req.body.reviews_id});`)
+    db(`UPDATE INTO listings (user_id, date_published, space_type, is_shared, location_id, reviews_id) VALUES ('${req.body.user_id}', '${req.body.date_published}', '${req.body.space_type}', '${req.body.is_shared}', '${req.body.location_id}', ${req.body.reviews_id});`)
         .then(results => {
             if (results.error)
             {
