@@ -7,7 +7,7 @@ router.use(bodyParser.json());
 
 //const VERSION = "v1";
 
-router.get('/bookings', (req, res) => {
+router.get(`/bookings`, (req, res) => {
     // Respond by send the full list of data in "listings" table
     db("SELECT * FROM bookings ORDER BY id ASC;")
         .then(results => {
@@ -16,7 +16,7 @@ router.get('/bookings', (req, res) => {
         .catch(err => res.status(500).send(err));
 });
 
-router.get('/bookings/:id', (req, res) => {
+router.get(`/bookings/:id`, (req, res) => {
     // Respond by send the full list of data in "listens" table
     db(`SELECT * FROM bookings WHERE id=${req.params.id};`)
         .then(results => {
@@ -24,8 +24,8 @@ router.get('/bookings/:id', (req, res) => {
         })
         .catch(err => res.status(500).send(err));
 });
-//"CREATE TABLE bookings ( id INT NOT NULL AUTO_INCREMENT, user_id integer, listing_id integer, start_date date, end_date date, PRIMARY KEY(`id`
-router.post('/bookings', (req, res) => {
+
+router.post(`/bookings`, (req, res) => {
     db(`INSERT INTO bookings (user_id, listings_id, start_date, end_date) VALUES ('${req.body.user_id}', '${req.body.listing_id}', '${req.body.start_date}', '${req.body.end_date}');`)
         .then((results) => {
             if (results.error)

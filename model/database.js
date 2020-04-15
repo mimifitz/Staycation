@@ -106,7 +106,7 @@ con.connect(function (err) {
         console.log("Dummy data for 'listings' (A)table was successful!");
     });
 
-    //DUMMY TABLE FOR reviews (b)
+    //DUMMY TABLE FOR listings (b)
     sql =
         "INSERT INTO listings (user_id, date_published, space_type, is_shared, location_id) VALUES (2, '2020-08-12', 'Countryside farmhouse.A place to take a break from all the chaos in the city', false, 2);";
     con.query(sql, function (err, result) {

@@ -3,24 +3,27 @@ h1{
 text-align: center;
 
 }
+body{
+  background-color: #199087;
+}
 
-.P{
+p{
 text-align: center;
 }
 
 
-.App{
+App{
   height: 100vh;
   display: flex;
   color: rgb(42, 161, 165);
 }
 
-.App__Aside{
+App__Aside{
   width: 50%;
   background-color: lightblue;
 }
 
-.App__Form {
+App__Form {
   width: 50%;
   background-color: rgb(63, 3, 58);
   padding: 25px 40px;
@@ -28,13 +31,13 @@ text-align: center;
 }
 
 
-/* .PageSwitcher {
+PageSwitcher {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10%;
 }
 
-.PageSwitcher__Item {
+.pageSwitcher__Item {
   background-color: #4C5D72;
   color: #9DA6B1;
   padding: 10px 25px;
@@ -46,12 +49,12 @@ text-align: center;
   text-decoration: none;
 }
 
-.PageSwitcher__Item__Active {
+/* .PageSwitcher__Item__Active {
   background-color: #5ED0C0;
   color: white;
-}
+} */
 
-.PageSwitcher__Item:first-child {
+/* .PageSwitcher__Item:first-child {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }

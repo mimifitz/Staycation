@@ -11,7 +11,7 @@ router.use(bodyParser.json());
 //const VERSION = "v1";
 
 //USER INFO QUERY
-router.get('/users', (req, res) => {
+router.get(`/users`, (req, res) => {
     // Respond by send the full list of data in "users" table
     db('SELECT * FROM users ORDER BY id ASC;')
         .then(results => {
@@ -20,16 +20,16 @@ router.get('/users', (req, res) => {
         .catch(err => res.status(500).send(err));
 });
 
-router.get('/users/:id', (req, res) => {
-    // Respond by send the full list of data in "users" table
-    db('SELECT * FROM users WHERE id=${req.params.id};')
+router.get(`/users/:id`, (req, res) => {
+    // Respond by send the specific list of data in "users" table
+    db(`SELECT * FROM users WHERE id=1;`)
         .then(results => {
             res.send(results.data);
         })
         .catch(err => res.status(500).send(err));
 });
 
-router.post('/users', (req, res) => {
+router.post(`/users`, (req, res) => {
     db(`INSERT INTO users (email, phone_number, num_country_code, name, preferred_contact_method) VALUES
  ('${req.body.email}', '${req.body.phone_number}', '${req.body.num_country_code}', '${req.body.name}', '${req.body.preferred_contact_method}');`)
         .then((results) => {
@@ -49,10 +49,10 @@ router.post('/users', (req, res) => {
 });
 
 //UPDATE
-router.put('/users/:id', (req, res) => {
+router.put(`/users/:id`, (req, res) => {
     // The request's body is available in req.body
     // URL params are available in req.params
-    db(`UPDATE users set email='${req.body.email}', phone_number='${req.body.phone_number}', num_country_code='${req.body.num_country_code}', name='${req.body.name}', preferred_contact_method='${req.body.preferred_contact_method}' WHERE id=${req.params.user_id};`)
+    db(`UPDATE users set email='${req.body.email}', phone_number='${req.body.phone_number}', num_country_code='${req.body.num_country_code}', name='${req.body.name}', preferred_contact_method='${req.body.preferred_contact_method}' WHERE id = ${req.params.user_id};`)
         .then(results => {
             if (results.error)
             {

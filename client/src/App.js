@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ImageSelectPreview from 'react-image-select-pv';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,37 +19,26 @@ class App extends React.Component {
 
   render() {
     return (
-
       <div>
-        <h1>Staycation Welcomes you!</h1>
-        <p>Your dream luxurious vacation is just a click away.</p>
 
-
-        <div className="App">
-          <div className="App__Aside">
-            <div className="App__Form">
-              <div className="PageSwitcher">
-                <h3>Join the club</h3>
-                <a href="membership" className="PageSwitcher__item">Sign In</a>
-
-                <a href="membership" className="PageSwitcher__item PageSwitcher__Item Active">Sign Up</a>
-
-                <div className="FormTitle">
-                  <a href="membership" className="FormTittle__Link">Sign In</a> or
-                  <a href="membership"
-                    className="FormTittle__Link Form__LINK__Active">Sign Up</a>
-
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-          </div>
+        <div>
+          <header className="App-header">
+            {/* <ImageSelectPreview/> */}
+            {/* <img src="./client/IMAGES/AJO_3220.JPG"></img> */}
+            <h1>Staycation Welcomes you!</h1>
+            <p>Your dream luxurious vacation is just a click away.</p>
+          </header>
         </div>
+        <div>
+          <form>
+            <h3>Join the club</h3>
+
+            <button>Sign In</button>
+          </form>
+        </div>
+
+
       </div>
-
-
     );
   }
 }
