@@ -28,10 +28,10 @@ app.get("/", function (req, res, next) {
 
 // //ADDED
 app.use('/staycation', usersRouter);
-//app.use('/staycation', listingsRouter);
-//app.use('/staycation', bookingsRouter);
-//app.use('/staycation', reviewsRouter);
-//app.use('/staycation', locationsRouter);
+app.use('/staycation', listingsRouter);
+app.use('/staycation', bookingsRouter);
+app.use('/staycation', reviewsRouter);
+app.use('/staycation', locationsRouter);
 
 
 // catch 404 and forward to error handler
